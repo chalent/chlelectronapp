@@ -1,0 +1,16 @@
+@use './reset.scss';
+
+:root {
+  --color-primary: #4f8cff;
+  --color-bg-content: #f5f6f8;
+  --color-bg-card: #ffffff;
+  --color-bg-sidebar: #f0f2f5;
+  --color-bg-header: #ffffff;
+  --color-border: #e0e0e0;
+  --color-text: #1f2329;
+}
+
+body {
+  color: var(--color-text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
