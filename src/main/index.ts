@@ -1,6 +1,6 @@
 import { app, BrowserWindow, shell } from 'electron'
 import { join } from 'path'
-import { registerIpcHandlers } from './ipc';
+import { registerIpcHandlers } from './ipc/index';
 
 // 窗口引用（防止被 GC 回收）
 let mainWindow: BrowserWindow | null = null
