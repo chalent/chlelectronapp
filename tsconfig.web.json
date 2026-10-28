@@ -3,14 +3,16 @@
   "include": [
     "src/renderer/src/**/*",
     "src/renderer/src/**/*.vue",
+    "src/preload/*.d.ts",
+    "src/shared/**/*",
     "src/preload/*.d.ts"
   ],
   "compilerOptions": {
     "composite": true,
     "moduleResolution": "bundler",
-    "baseUrl": ".",
     "paths": {
-      "@/*": ["src/renderer/src/*"]
+      "@/*": ["./src/renderer/src/*"],
+      "@shared/*": ["./src/shared/*"]
     }
   }
 }

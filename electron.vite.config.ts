@@ -20,6 +20,7 @@ export default defineConfig({
     resolve: {
       alias: {
         '@preload': resolve('src/preload'),
+        '@shared': resolve('src/shared'),
       },
     },
   },
@@ -30,6 +31,7 @@ export default defineConfig({
     resolve: {
       alias: {
         '@': resolve('src/renderer/src'),
+        '@shared': resolve('src/shared'),
       },
     },
     plugins: [vue()],

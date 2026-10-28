@@ -5,7 +5,6 @@
  * 所有跨进程传递的数据结构都定义在这里，两端引用同一份，
  * 避免出现字段不一致或拼写错误导致的运行时问题。
  */
-import type { TagValue } from '../main/drivers/types';
 
 /** IPC 通道名。集中管理，避免字符串散落各处 */
 export const IpcChannels = {
@@ -43,4 +42,12 @@ export interface DeviceStatusChangePayload {
   status: DeviceStatus;
   reason?: string;
   timestamp: number;
+}
+
+export interface TagValue {
+  tagId: string;
+  value: number | boolean;
+  raw: number[];
+  timestamp: number;
+  quality: 'good' | 'bad';
 }

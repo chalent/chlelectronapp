@@ -1,6 +1,8 @@
 import { BrowserWindow, ipcMain } from 'electron'
+import { registerDeviceHandlers } from './device-handlers'
+import { PollingService } from '@main/services/polling-service'
 
-export function registerIpcHandlers(): void {
+export function registerIpcHandlers(service: PollingService): void {
   // ===== 系统相关 =====
   ipcMain.handle('system:get-platform', () => {
     return process.platform
@@ -16,6 +18,9 @@ export function registerIpcHandlers(): void {
     const win = BrowserWindow.fromWebContents(event.sender)
     win?.close()
   })
+
+  // ===== 设备采集 =====
+  registerDeviceHandlers(service);
 
   // 后续在这里继续添加 file:、dialog: 等 handler
 }

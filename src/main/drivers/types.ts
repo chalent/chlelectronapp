@@ -5,6 +5,8 @@
  * 上层 PollingService 只依赖此接口，不感知具体驱动实现。
  */
 
+import { TagValue } from "@shared/ipc-types";
+
 export type ByteOrder = 'AB' | 'BA' | 'ABCD' | 'CDAB';
 
 export type RegisterType = 'holding' | 'input';
@@ -36,13 +38,7 @@ export interface TagConfig {
   writable: boolean;
 }
 
-export interface TagValue {
-  tagId: string;
-  value: number | boolean;
-  raw: number[];
-  timestamp: number;
-  quality: 'good' | 'bad';
-}
+
 
 export interface ReadResult {
   deviceId: string;
